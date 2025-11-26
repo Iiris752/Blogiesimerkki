@@ -1,0 +1,11 @@
+{"id":"78642","variant":"standard","title":".gitignore Node.js + HTML/JS projekti"}
+node_modules/
+
+*.log
+
+.env
+
+.DS_Store
+
+dist/
+build/

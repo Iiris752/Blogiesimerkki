@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header { background: #4CAF50; color: white; padding: 1rem; text-align: center; }
+main { padding: 1rem; }
+footer { background: #f1f1f1; padding: 0.5rem; text-align: center; margin-top: 1rem; }
+#posts { margin-bottom: 2rem; }
+.post { border-bottom: 1px solid #ddd; padding: 0.5rem 0; }

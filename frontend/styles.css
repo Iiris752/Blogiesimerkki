@@ -1,6 +1,35 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-header { background: #4CAF50; color: white; padding: 1rem; text-align: center; }
-main { padding: 1rem; }
-footer { background: #f1f1f1; padding: 0.5rem; text-align: center; margin-top: 1rem; }
-#posts { margin-bottom: 2rem; }
-.post { border-bottom: 1px solid #ddd; padding: 0.5rem 0; }
+/*leipäteksti nätimmäksi:*/
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*otsikot vähän vahvempaa fonttia:*/
+h1, h2, h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    background: rgb(226, 116, 76); color:beige; padding: 1rem; text-align: center; 
+}
+
+main {
+    padding: 1rem;
+}
+
+footer {
+    background: rgb(232, 173, 159);
+    padding: 0.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#posts {
+    margin-bottom: 2rem;
+}
+
+.post {
+    border-bottom: 1px solid rgb(96, 98, 103);
+    padding: 0.5 rem 0;
+}

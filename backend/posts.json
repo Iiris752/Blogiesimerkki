@@ -1,12 +1,12 @@
 [
   {
-    "id": 1,
+    "postID": 1,
     "title": "Ensimmäinen postaus",
-    "content": "Tervetuloa! Tämä on pieni perusnäyte web-kehityksen osalta: backend on rakennettu Node.js:llä ja Expressillä, frontend toimii puhtaalla HTML:llä, CSS:llä ja JavaScriptillä. Tässä projektissa siis REST API:n käyttö, tiedostojen käsittelyä ja yksinkertaisen käyttöliittymän rakentamista."
+    "text": "Tervetuloa! Tämä on pieni perusnäyte web-kehityksen osalta: backend on rakennettu Node.js:llä ja Expressillä, frontend toimii puhtaalla HTML:llä, CSS:llä ja JavaScriptillä. Tässä projektissa siis REST API:n käyttö, tiedostojen käsittelyä ja yksinkertaisen käyttöliittymän rakentamista."
   },
   {
-    "id": 1764153860408,
+    "postID": 1764153860408,
     "title": "Motivaatio! :)",
-    "content": "Olisi mahtavaa, jos voisi kehittyä aina vain paremmaksi ohjelmoimaan ja ymmärtämään näitä asioita myös web-kehityksen osalta."
+    "text": "Olisi mahtavaa, jos voisi kehittyä aina vain paremmaksi ohjelmoimaan ja ymmärtämään näitä asioita myös web-kehityksen osalta."
   }
 ]

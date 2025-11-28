@@ -1,33 +1,36 @@
+//Node js moduulit
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 
-const app = express();
-const PORT = 3000;
+//alustusta tähän
+const app = express()
+const port = 4000;
 
-// Palvelinasetukset
+//palvelinasetuksia
 app.use(cors());
 app.use(express.json());
 
-//polku fronttikansioon
+//polku fronttikansioon:
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-const DATA_FILE = path.join(__dirname, 'posts.json');
+//kerrotaan palvelimelle, missä sijaitsee blogipostaukset
+const DataFile = path.join(__dirname, 'posts.json');
 
-// Postausten haku:
+//postausten hakeminen
 app.get('/posts', (req, res) => {
-    const posts = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-    res.json(posts);
-});
+    const posts = JSON.parse(fs.readFileSync(DataFile, 'utf8'));
+    res.json(posts)
+})
 
-// UUden postauksen lisäämismahdollisuus:
-app.post('/posts', (req, res) => {
-    const posts = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-    const newPost = { id: Date.now(), title: req.body.title, content: req.body.content };
+//uuden postauksen lisäämisen mahdollisuus
+app.post('/posts', (req,res) => {
+    const posts = JSON.parse(fs.readFileSync(DataFile, 'utf8'));
+    const newPost = {postID: Date.now(), title: req.body.title, text: req.body.text};
     posts.push(newPost);
-    fs.writeFileSync(DATA_FILE, JSON.stringify(posts, null, 2));
+    fs.writeFileSync(DataFile, JSON.stringify(posts,null,2));
     res.json(newPost);
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(port, () => console.log(`Server running on http://localhost:${port}`));

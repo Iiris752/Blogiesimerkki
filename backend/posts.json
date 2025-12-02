@@ -2,7 +2,13 @@
   {
     "postID": 1,
     "title": "Ensimmäinen postaus",
-    "text": "Tervetuloa! Tämä on pieni perusnäyte web-kehityksen osalta: backend on rakennettu Node.js:llä ja Expressillä, frontend toimii puhtaalla HTML:llä, CSS:llä ja JavaScriptillä. Tässä projektissa siis REST API:n käyttö, tiedostojen käsittelyä ja yksinkertaisen käyttöliittymän rakentamista."
+    "text": "Tervetuloa! Tämä on pieni perusnäyte web-kehityksen osalta: backend on rakennettu Node.js:llä ja Expressillä, frontend toimii puhtaalla HTML:llä, CSS:llä ja JavaScriptillä. Tässä projektissa siis REST API:n käyttö, tiedostojen käsittelyä ja yksinkertaisen käyttöliittymän rakentamista.",
+    "comments": [
+      {
+        "commentID": 1764676058313,
+        "text": "kommentointi toimii!"
+      }
+    ]
   },
   {
     "postID": 1764153860408,

@@ -1,35 +1,143 @@
-/*leipäteksti nätimmäksi:*/
+
+/* Leipäteksti nätimmäksi */
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f3f1f1;
 }
 
-/*otsikot vähän vahvempaa fonttia:*/
+/* Otsikot vähän vahvempaa fonttia */
 h1, h2, h3 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/* Header */
 header {
-    background: rgb(226, 116, 76); color:beige; padding: 1rem; text-align: center; 
+    background: rgb(220, 143, 115);
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    text-align: center;
 }
 
+/* Keskitetään main-elementti: */
 main {
     padding: 1rem;
+    max-width: 800px;
+    margin: auto;
 }
 
+/* Footer */
 footer {
     background: rgb(232, 173, 159);
     padding: 0.5rem;
     text-align: center;
     margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #333;
 }
 
+/* Postauslista, lisätään väljyyttä */
 #posts {
     margin-bottom: 2rem;
 }
 
+/* Postausosuuden määrittelyä */
 .post {
-    border-bottom: 1px solid rgb(96, 98, 103);
-    padding: 0.5 rem 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Postauksen otsikko */
+.post h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Kommenttien otsikko */
+.post h4 {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Kommenttilista, poistetaan täpät */
+.post ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+/* Yksittäinen kommentti */
+.post ul li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Kommentin syöttökenttä ja nappi */
+.post input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/*kommentoi-nappi*/
+.post button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    background-color: rgb(226, 116, 76);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/*kommentoi-napin hover*/
+.post button:hover {
+    background-color: rgb(176, 66, 32);
+}
+
+/* Uuden postauksen lomake */
+#newpost {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#newpost input, #newpost textarea {
+    width: 98%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+#newpost button {
+    padding: 10px 15px;
+    background-color: rgb(226, 116, 76);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#newpost button:hover {
+    background-color: rgb(176, 66, 32);
 }

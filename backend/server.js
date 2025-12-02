@@ -31,6 +31,22 @@ app.post('/posts', (req,res) => {
     posts.push(newPost);
     fs.writeFileSync(DataFile, JSON.stringify(posts,null,2));
     res.json(newPost);
+})
+
+//kommentin lisäämisen mahdollisuus
+app.post('/posts/:id/comments', (req,res) => {
+    const posts = JSON.parse(fs.readFileSync(DataFile, 'utf-8'));
+    const postID = parseInt(req.params.id);
+    const post = posts.find(p => p.postID === postID);
+
+    if(!post) return res.status(404).json({error:'Post not found'});
+
+    const newComment = { commentID: Date.now(), text: req.body.text };
+    post.comments = post.comments || [];
+    post.comments.push(newComment);
+
+    fs.writeFileSync(DataFile, JSON.stringify(posts, null, 2));
+    res.json(newComment);
 });
 
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`));

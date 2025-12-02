@@ -2,6 +2,7 @@
 const postsURL = 'http://localhost:4000/posts';
 
 //haetaan postaukset fetchillä, käydään läpi ja lisätään DOMiin
+//haetaan myös kommentit
 function fetchPosts() {
     fetch(postsURL)
         .then(res => res.json())
@@ -11,11 +12,37 @@ function fetchPosts() {
             posts.forEach(post => {
                 const div = document.createElement('div');
                 div.className = 'post';
-                div.innerHTML = `<h3>${post.title}</h3><p>${post.text}</p>`;
+                div.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.text}</p>
+                    
+                    <h4>Kommentit:</h4>
+                    <ul>
+                        ${(post.comments || []).map(comments => `<li>${comments.text}</li>`).join('')}
+                    </ul>
+                    <input type="text" id="comment-${post.postID}" placeholder="Lisää kommentti">
+                    <button onclick="addComment(${post.postID})">Kommentoi</button>
+                `;
                 postList.appendChild(div);
             });
         })
         .catch(err => console.error('Fetch error!', err));
+}
+
+//uuden kommentin lisääminen:
+function addComment(postID){
+    const input = document.getElementById(`comment-${postID}`);
+    const text = input.value;
+    if(!text) return alert('Kirjoita kommentti');
+    fetch(`${postsURL}/${postID}/comments`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text})
+    })
+    .then(() =>{
+        fetchPosts();
+        input.value='';
+    });
 }
 
 //päivitetään uusi postaus serverille

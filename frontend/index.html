@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="fi">
-<head>
-<meta charset="UTF-8">
-<title>Blogi</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header>
-    <h1>Blogi työhakemukseen</h1>
-</header>
-<main>
-    <section id="posts"></section>
-    <section id="new-post">
-        <h2>Luo uusi postaus</h2>
-        <input type="text" id="title" placeholder="Otsikko"><br>
-        <textarea id="content" placeholder="Sisältö"></textarea><br>
-        <button onclick="addPost()">Lähetä</button>
-    </section>
-</main>
-<footer>
-    © 2025 Iiris Esmaili
-</footer>
-<script src="script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blogi</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Blogi työhakemukseen</h1>
+        </header>
+        <main>
+            <section id="posts"></section>
+            <section id="newpost">
+                <h2>Luo tästä uusi postaus</h2>
+                <input type="text" id="title" placeholder="Otsikko"><br>
+                <textarea id="text" placeholder="Sisältö"></textarea><br>
+                <button onclick="addPost()">Lähetä</button>
+            </section>
+        </main>
+    <footer>
+        © 2025 Iiris Esmaili
+    </footer>
+    <script src="script.js"></script>
+    </body>
 </html>

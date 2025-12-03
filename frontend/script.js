@@ -1,3 +1,4 @@
+
 //määritetään URL, josta blogipostaukset löytyy:
 const postsURL = 'http://localhost:4000/posts';
 
@@ -18,10 +19,16 @@ function fetchPosts() {
                     
                     <h4>Kommentit:</h4>
                     <ul>
-                        ${(post.comments || []).map(comments => `<li>${comments.text}</li>`).join('')}
+                        ${(post.comments || [])
+                            .map(comment => `
+                                <li>
+                                    <small>${comment.timestamp}</small> - ${comment.text}
+                                    <button class="deleteBtn" onclick="deleteComment(${post.postID}, ${comment.commentID})">Poista</button>
+                                </li>`)
+                            .join('')}
                     </ul>
                     <input type="text" id="comment-${post.postID}" placeholder="Lisää kommentti">
-                    <button onclick="addComment(${post.postID})">Kommentoi</button>
+                    <button class="commentBtn" onclick="addComment(${post.postID})">Kommentoi</button>
                 `;
                 postList.appendChild(div);
             });
@@ -45,6 +52,15 @@ function addComment(postID){
     });
 }
 
+//Kommentin poisto:
+function deleteComment(postID, commentID) {
+    fetch(`${postsURL}/${postID}/comments/${commentID}`, {
+        method: 'DELETE'
+    })
+    .then(() => fetchPosts());
+}
+
+
 //päivitetään uusi postaus serverille
 function addPost() {
     const title = document.getElementById('title').value;
@@ -56,7 +72,7 @@ function addPost() {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({title,text})
     })
-    .then(()=>{
+    .then(() =>{
         fetchPosts();
         document.getElementById('title').value = '';
         document.getElementById('text').value = '';

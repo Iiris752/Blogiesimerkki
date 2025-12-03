@@ -1,4 +1,3 @@
-
 [
   {
     "postID": 1,
@@ -6,14 +5,16 @@
     "text": "Tervetuloa! Tämä on pieni perusnäyte web-kehityksen osalta: backend on rakennettu Node.js:llä ja Expressillä, frontend toimii puhtaalla HTML:llä, CSS:llä ja JavaScriptillä. Tässä projektissa siis REST API:n käyttö, tiedostojen käsittelyä ja yksinkertaisen käyttöliittymän rakentamista.",
     "comments": [
       {
-        "commentID": 1764676058313,
-        "text": "kommentointi toimii!"
+        "commentID": 1764750445701,
+        "text": "kommentoidussa tekstissä näkyy formatoitu aikaleima",
+        "timestamp": "3.12.2025 klo 10.27"
       }
     ]
   },
   {
     "postID": 1764153860408,
     "title": "Motivaatio! :)",
-    "text": "Olisi mahtavaa, jos voisi kehittyä aina vain paremmaksi ohjelmoimaan ja ymmärtämään näitä asioita myös web-kehityksen osalta."
+    "text": "Olisi mahtavaa, jos voisi kehittyä aina vain paremmaksi ohjelmoimaan ja ymmärtämään näitä asioita myös web-kehityksen osalta.",
+    "comments": []
   }
 ]

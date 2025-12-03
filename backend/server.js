@@ -41,12 +41,43 @@ app.post('/posts/:id/comments', (req,res) => {
 
     if(!post) return res.status(404).json({error:'Post not found'});
 
-    const newComment = { commentID: Date.now(), text: req.body.text };
+    //  MÄÄRITELLÄÄN miten aika näytetään, kun lisätään myöh.aikaleima kommenttiin
+    const date = new Date;
+    const formtDate = date.toLocaleDateString('fi-FI');
+    const formtTime = date.toLocaleTimeString('fi-FI', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    
+    const newComment = {
+        commentID: Date.now(),
+        text: req.body.text,
+        //lisätään myös aikaleima
+        timestamp: `${formtDate} klo ${formtTime}`
+    };
+
     post.comments = post.comments || [];
     post.comments.push(newComment);
 
     fs.writeFileSync(DataFile, JSON.stringify(posts, null, 2));
     res.json(newComment);
+})
+
+//kommentin poisto:
+app.delete('/posts/:postID/comments/:commentID', (req, res) => {
+    const posts = JSON.parse(fs.readFileSync(DataFile, 'utf-8'));
+    const postID = parseInt(req.params.postID);
+    const commentID = parseInt(req.params.commentID);
+
+    const post = posts.find(p => p.postID === postID);
+    if (!post) return res.status(404).json({ error: 'Post not found' });
+
+    post.comments = post.comments.filter(c => c.commentID !== commentID);
+
+    fs.writeFileSync(DataFile, JSON.stringify(posts, null, 2));
+    res.json({ success: true });
 });
+
+
 
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`));

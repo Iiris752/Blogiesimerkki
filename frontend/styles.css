@@ -94,7 +94,7 @@ footer {
 }
 
 /*kommentoi-nappi*/
-.post button {
+.post .commentBtn {
     padding: 8px 12px;
     margin-left: 5px;
     background-color: rgb(226, 116, 76);
@@ -106,8 +106,15 @@ footer {
 }
 
 /*kommentoi-napin hover*/
-.post button:hover {
+.post .commentBtn:hover {
     background-color: rgb(176, 66, 32);
+}
+
+/*kommentin aikaleiman tyylittely*/
+.post ul li small {
+    color: #777;
+    font-size: 0.85rem;
+    margin-right: 5px;
 }
 
 /* Uuden postauksen lomake */
@@ -119,6 +126,7 @@ footer {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/*uuden postauksen tekstilaatikot*/
 #newpost input, #newpost textarea {
     width: 98%;
     padding: 8px;
@@ -128,6 +136,7 @@ footer {
     font-size: 0.95rem;
 }
 
+/*uuden postauksen napin tyylittely*/
 #newpost button {
     padding: 10px 15px;
     background-color: rgb(226, 116, 76);
@@ -138,6 +147,25 @@ footer {
     font-size: 0.9rem;
 }
 
+/*uuden postauksen napin hoveri*/
 #newpost button:hover {
     background-color: rgb(176, 66, 32);
+}
+
+/* poistonapin tyylittelyä */
+.deleteBtn {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 3px 5px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    margin-left: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/*poistonapin hover*/
+.deleteBtn:hover {
+    background-color: #e58282;
 }

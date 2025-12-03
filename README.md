@@ -9,4 +9,5 @@ frontend HTML:llä, CSS:llä ja JavaScriptillä
 - blogipostauksien kommentointimahdollisuus
 - kommentissa formatoitu aikaleima
 - kommentin poisto
+- blogitekstin poisto
 - ulkoasu ja napit tyylitelty

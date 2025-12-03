@@ -152,8 +152,26 @@ footer {
     background-color: rgb(176, 66, 32);
 }
 
-/* poistonapin tyylittelyä */
-.deleteBtn {
+/* kommentin poistonapin tyylittelyä */
+.deleteCBtn {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 3px 5px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    margin-left: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/*kommentin poistonapin hover*/
+.deleteCBtn:hover {
+    background-color: rgb(220, 143, 115);
+}
+
+/*poistonappi postauksen poistoon*/
+.deletePBtn {
     background-color: white;
     color: black;
     border: 1px solid black;
@@ -166,6 +184,6 @@ footer {
 }
 
 /*poistonapin hover*/
-.deleteBtn:hover {
-    background-color: #e58282;
+.deletePBtn:hover {
+    background-color: rgb(220, 143, 115);
 }

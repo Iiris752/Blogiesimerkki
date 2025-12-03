@@ -16,6 +16,7 @@ function fetchPosts() {
                 div.innerHTML = `
                     <h3>${post.title}</h3>
                     <p>${post.text}</p>
+                    <button class="deletePBtn" onclick="deletePost(${post.postID})">Poista postaus</button>
                     
                     <h4>Kommentit:</h4>
                     <ul>
@@ -23,7 +24,7 @@ function fetchPosts() {
                             .map(comment => `
                                 <li>
                                     <small>${comment.timestamp}</small> - ${comment.text}
-                                    <button class="deleteBtn" onclick="deleteComment(${post.postID}, ${comment.commentID})">Poista</button>
+                                    <button class="deleteCBtn" onclick="deleteComment(${post.postID}, ${comment.commentID})">Poista kommentti</button>
                                 </li>`)
                             .join('')}
                     </ul>
@@ -60,6 +61,13 @@ function deleteComment(postID, commentID) {
     .then(() => fetchPosts());
 }
 
+//postauksen poisto:
+function deletePost(postID) {
+    fetch(`${postsURL}/${postID}`,{
+        method: 'DELETE'
+    })
+    .then(() => fetchPosts());
+}
 
 //päivitetään uusi postaus serverille
 function addPost() {

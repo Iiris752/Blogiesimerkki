@@ -76,6 +76,17 @@ app.delete('/posts/:postID/comments/:commentID', (req, res) => {
 
     fs.writeFileSync(DataFile, JSON.stringify(posts, null, 2));
     res.json({ success: true });
+})
+
+//postauksen poisto:
+app.delete('/posts/:postID', (req, res) => {
+    const posts = JSON.parse(fs.readFileSync(DataFile, 'utf-8'));
+    const postID = parseInt(req.params.postID);
+
+    const updatePosts = posts.filter(d => d.postID !== postID);
+
+    fs.writeFileSync(DataFile, JSON.stringify(updatePosts, null, 2));
+    res.json({ success: true});
 });
 
 
